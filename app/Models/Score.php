@@ -9,12 +9,12 @@ class Score extends Model
 {
     use HasFactory;
 
-    public function mediaPosts()
+    public function mediaPost()
     {
         return $this->belongsTo(Media::class);
     }
 
-    public function author()
+    public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
