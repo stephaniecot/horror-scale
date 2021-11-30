@@ -9,12 +9,14 @@
 
 <body style="font-family: Open Sans, sans-serif">
     <section class="px-6 py-8">
-        <nav class="md:flex md:justify-between md:items-center">
-            <div class="hidden fixed top-0 left-0 px-6 sm:block">
+        <nav class="flex md:justify-between md:items-center">
+            <div class="fixed top-0 left-0 px-6 sm:block">
                 <a href="/">
                     <img src="/images/logo-black.png" alt="Horror Scale Logo" width="165" height="16">
                 </a>
+
             </div>
+
             @if (Route::has('login'))
             <div class="hidden fixed top-2 right-0 px-6 py-4 sm:block">
                 @auth
@@ -26,6 +28,13 @@
                         <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
                     @endif
                 @endauth
+                <form method="GET" action="/">
+                <input type="text"
+                       name="search"
+                       placeholder="Search"
+                       class="bg-blue-400 placeholder-black font-semibold text-sm"
+                       value="{{ request('search') }}">
+            </form>
             </div>
         @endif
     </nav>
@@ -33,3 +42,5 @@
 
 
     {{ $slot }}
+
+</body>

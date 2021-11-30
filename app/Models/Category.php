@@ -9,8 +9,8 @@ class Category extends Model
 {
     use HasFactory;
 
-    public function mediaPosts()
+    function post()
     {
-        return $this->hasMany(Media::class);
+        return $this->hasMany(Post::class);
     }
 }

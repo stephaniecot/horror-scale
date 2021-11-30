@@ -5,18 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Media extends Model
+class Post extends Model
 {
     use HasFactory;
 
-    protected $with = ['category', 'author'];
-    
+    protected $with = ['category'];
+
     public function scopeFilter($query, array $filters)
     {
         $query->when($filters['search'] ?? false, fn($query, $search) =>
             $query->where(fn($query) =>
                 $query->where('title', 'like', '%' . $search . '%')
                     ->orWhere('resume', 'like', '%' . $search . '%')
+                    ->orWhere('author', 'like', '%' . $search . '%')
             )
         );
 
@@ -26,11 +27,11 @@ class Media extends Model
             )
         );
 
-        $query->when($filters['author'] ?? false, fn($query, $author) =>
-            $query->whereHas('author', fn ($query) =>
-                $query->where('username', $author)
-            )
-        );
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 
     public function scores()
@@ -38,10 +39,6 @@ class Media extends Model
         return $this->hasMany(Score::class);
     }
 
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
 
     public function author()
     {
