@@ -24,7 +24,7 @@ class CreatePostsTable extends Migration
             $table->string('author');
             $table->integer('year');
             $table->string('thumbnail');
-            $table->text('resume');
+            $table->text('summary');
         });
     }
 
