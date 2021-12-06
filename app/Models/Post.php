@@ -16,7 +16,7 @@ class Post extends Model
         $query->when($filters['search'] ?? false, fn($query, $search) =>
             $query->where(fn($query) =>
                 $query->where('title', 'like', '%' . $search . '%')
-                    ->orWhere('resume', 'like', '%' . $search . '%')
+                    ->orWhere('summary', 'like', '%' . $search . '%')
                     ->orWhere('author', 'like', '%' . $search . '%')
             )
         );
@@ -26,6 +26,8 @@ class Post extends Model
                 $query->where('slug', $category)
             )
         );
+
+    
 
     }
 

@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Score extends Model
 {
+    protected $fillable = ['user_id', 'total_score'];
+
     use HasFactory;
 
     public function post()

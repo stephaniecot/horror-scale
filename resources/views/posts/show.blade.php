@@ -8,6 +8,7 @@
         <li>{{$post->author}}</li>
         <li>{{$post->year}}</li>
         <li>{{$post->summary}}</li>
+        <li>Total score : {{$post->scores->sum('total_score')}}</li>
 
        @foreach ($post->scores as $score)
        <li>{{$score->user->username}}</li>
@@ -28,6 +29,7 @@
             </header>
 
             <div class="mt-6">
+                <label for="comment">Comment</label>
                 <textarea
                     name="comment"
                     class="w-full text-sm focus:outline-none focus:ring"
@@ -40,12 +42,8 @@
                 @enderror
             </div>
             <div class="mt-6">
-                <select name="total-score" id="total-score">
-                    <option value="1">1</option>
-                    <option value="1">1</option>
-                    <option value="1">1</option>
-                    <option value="1">1</option>
-                </select>
+                <label for="total-score">Total Score</label>
+                <input type="text" name='total-score' id='total-score'>
 
                 @error('total-score')
                     <span class="text-xs text-red-500">{{ $message }}</span>
@@ -60,7 +58,7 @@
 @else
     <p class="font-semibold">
         <a href="/register" class="hover:underline">Register</a> or
-        <a href="/login" class="hover:underline">log in</a> to leave a comment.
+        <a href="/login" class="hover:underline">log in</a> to rate this {{$post->category->name}}.
     </p>
 @endauth
 

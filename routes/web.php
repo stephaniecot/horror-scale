@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\PostScoresController;
+use App\Http\Controllers\ScoresController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +23,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PostsController::class, 'index'])->name('home');
 Route::get('posts/{post:slug}', [PostsController::class, 'show']);
 
+Route::get('scores', [ScoresController::class, 'index']);
+Route::post('posts/{post:slug}/scores', [PostScoresController::class, 'store']);
 
 
 Route::get('/dashboard', function () {
