@@ -18,49 +18,7 @@
 
     </ul>
 
-    @auth
-
-        <form method="POST" action="/posts/{{ $post->slug }}/scores">
-            @csrf
-
-            <header class="flex items-center">
-
-                <h2 class="ml-4">Add some weight on the scale</h2>
-            </header>
-
-            <div class="mt-6">
-                <label for="comment">Comment</label>
-                <textarea
-                    name="comment"
-                    class="w-full text-sm focus:outline-none focus:ring"
-                    rows="5"
-                    placeholder="Quick, think of something to say!"
-                    required></textarea>
-
-                @error('comment')
-                    <span class="text-xs text-red-500">{{ $message }}</span>
-                @enderror
-            </div>
-            <div class="mt-6">
-                <label for="total-score">Total Score</label>
-                <input type="text" name='total-score' id='total-score'>
-
-                @error('total-score')
-                    <span class="text-xs text-red-500">{{ $message }}</span>
-                @enderror
-            </div>
-
-            <div class="flex justify-end mt-6 pt-6 border-t border-gray-200">
-                <button type="submit">Submit</button>
-            </div>
-        </form>
-
-@else
-    <p class="font-semibold">
-        <a href="/register" class="hover:underline">Register</a> or
-        <a href="/login" class="hover:underline">log in</a> to rate this {{$post->category->name}}.
-    </p>
-@endauth
+   @include('posts._add-score')
 
     </main>
 </section>

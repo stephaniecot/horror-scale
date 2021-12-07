@@ -15,20 +15,20 @@ class PostScoresController extends Controller
         {
         request()->validate([
             'comment' => 'nullable',
-            'spooky_score' => 'nullable|integer|max:10',
-            'suspense_score' => 'nullable|integer|max:10',
-            'gore_score' => 'nullable|integer|max:10',
-            'disturbing_score' => 'nullable|integer|max:10',
+            'spooky-score' => 'nullable|integer|max:5',
+            'suspense-score' => 'nullable|integer|max:5',
+            'gore-score' => 'nullable|integer|max:5',
+            'disturbing-score' => 'nullable|integer|max:5',
             'total-score' => 'required|integer|max:10'
         ]);
 
         $post->scores()->create([
             'user_id' => request()->user()->id,
             'comment' => request('comment'),
-            'spooky_score' => request('spooky_score'),
-            'suspense_score' => request('suspense_score'),
-            'gore_score' => request('gore_score'),
-            'disturbing_score' => request('disturbing_score'),
+            'spooky_score' => request('spooky-score'),
+            'suspense_score' => request('suspense-score'),
+            'gore_score' => request('gore-score'),
+            'disturbing_score' => request('disturbing-score'),
             'total_score' => request('total-score')
         ]);
 

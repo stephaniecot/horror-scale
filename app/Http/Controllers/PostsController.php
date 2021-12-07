@@ -17,16 +17,20 @@ class PostsController extends Controller
     public function index()
     {
         return view('index', [
-            'posts' => Post::latest()->filter(
-                        request(['search', 'category'])
+            'posts' => Post::latest()->where('active', 1)
+                ->filter(request(['search', 'category'])
                     )->paginate(18)->withQueryString()
         ]);
     }
 
     public function show(Post $post)
     {
+        if($post->active == true) {
         return view('posts.show', [
             'post' => $post
+
         ]);
+    }
+    return abort(404);
     }
 }
