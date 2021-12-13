@@ -33,4 +33,10 @@ class PostsController extends Controller
     }
     return abort(404);
     }
+
+    public function create()
+    {
+        return view('create');
+    }
+
 }

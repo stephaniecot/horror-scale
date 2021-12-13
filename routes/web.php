@@ -23,8 +23,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PostsController::class, 'index'])->name('home');
 Route::get('posts/{post:slug}', [PostsController::class, 'show']);
 
+Route::get('create', [PostsController::class, 'create'])->middleware('auth');
+
 Route::get('scores', [ScoresController::class, 'index']);
-Route::post('posts/{post:slug}/scores', [PostScoresController::class, 'store']);
+Route::post('posts/{post:slug}/scores', [ScoresController::class, 'store']);
 
 
 Route::get('/dashboard', function () {
