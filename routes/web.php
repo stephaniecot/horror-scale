@@ -24,6 +24,7 @@ Route::get('/', [PostsController::class, 'index'])->name('home');
 Route::get('posts/{post:slug}', [PostsController::class, 'show']);
 
 Route::get('create', [PostsController::class, 'create'])->middleware('auth');
+Route::post('create', [PostsController::class, 'store'])->middleware('auth');
 
 Route::get('scores', [ScoresController::class, 'index']);
 Route::post('posts/{post:slug}/scores', [ScoresController::class, 'store']);

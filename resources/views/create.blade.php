@@ -1,7 +1,7 @@
 <x-layout>
     <section class="py-8 max-w-md mx-auto">
 <h1><b>Add a post</b></h1>
-    <form method="POST" action="/posts" enctype="multipart/form-data">
+    <form method="POST" action="/create" enctype="multipart/form-data">
         @csrf
 
     <div class="mt-6">
@@ -62,9 +62,15 @@
     <div class="mt-6">
     @can('admin')
     <label for="active">
-        Active
+        Online
     </label>
-    <input type="checkbox" name="active" id="active">
+    <select name="active" id="active">
+        <option value='1'>Yes</option>
+        <option value='0'>No</option>
+    </select>
+    @error('active')
+            <span class="text-xs text-red-500">{{ $message }}</span>
+        @enderror
     @endcan
     </div>
 
@@ -72,8 +78,6 @@
         <button type="submit">Submit</button>
     </div>
 
-
-    {{-- {{Str::slug('je suis un chat')}} --}}
     </section>
 
 
