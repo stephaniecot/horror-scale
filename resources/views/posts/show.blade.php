@@ -5,6 +5,7 @@
     <ul>
         <li>{{$post->title}}</li>
         <li>{{$post->category->name}}</li>
+        <li><img src="{{ asset('storage/' . $post->thumbnail) }}" alt=""></li>
         <li>{{$post->author}}</li>
         <li>{{$post->year}}</li>
         <li>{{$post->summary}}</li>

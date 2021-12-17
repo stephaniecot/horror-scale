@@ -55,7 +55,7 @@ class PostsController extends Controller
 
         Post::create([
             'user_id' => request()->user()->id,
-            'slug' => Str::slug(request('title')).'-'.Str::slug(request('author')).'-'.request('year'),
+            'slug' => Str::slug(request('title')).'-'.Str::slug(request('author')),
             'active' => request()->boolean('active'),
             'title' => request('title'),
             'author' => request('author'),
@@ -67,10 +67,6 @@ class PostsController extends Controller
         return redirect('/');
     }
 
-    public function getSlug($title, $id)
-    {
-        $slug = Str::slug($title).'-'.$id;
-        return $slug;
-    }
+
 
 }

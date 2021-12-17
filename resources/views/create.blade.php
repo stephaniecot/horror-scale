@@ -66,7 +66,7 @@
     </label>
     <select name="active" id="active">
         <option value='1'>Yes</option>
-        <option value='0'>No</option>
+        <option value='0' selected>No</option>
     </select>
     @error('active')
             <span class="text-xs text-red-500">{{ $message }}</span>
