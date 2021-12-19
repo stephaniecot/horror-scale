@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FavoritesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\PostScoresController;
 use App\Http\Controllers\ScoresController;
@@ -28,6 +29,10 @@ Route::post('create', [PostsController::class, 'store'])->middleware('auth');
 
 Route::get('scores', [ScoresController::class, 'index']);
 Route::post('posts/{post:slug}/scores', [ScoresController::class, 'store']);
+
+Route::post('posts/{post:slug}', [FavoritesController::class, 'store'])->middleware('auth');
+Route::get('favorites', [FavoritesController::class, 'index'])->middleware('auth');
+Route::delete('favorites', [FavoritesController::class, 'destroy'])->middleware('auth');
 
 
 Route::get('/dashboard', function () {

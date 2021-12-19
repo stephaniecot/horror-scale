@@ -11,6 +11,8 @@
         <li>{{$post->summary}}</li>
         <li>Total score : {{$post->scores->sum('total_score')}}</li>
 
+        @include('posts._add-favorites')
+
        @foreach ($post->scores as $score)
        <li>{{$score->user->username}}</li>
        <li>{{$score->total_score}}</li>
@@ -18,6 +20,8 @@
        @endforeach
 
     </ul>
+
+
 
    @include('posts._add-score')
 
