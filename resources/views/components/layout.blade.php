@@ -14,12 +14,16 @@
                 <a href="/">
                     <img src="/images/logo-black.png" alt="Horror Scale Logo" width="165" height="16">
                 </a>
-
+                <div class="hidden fixed left-40 top-2 px-6 py-4 sm:flex">
+                <a href="scores">Show by scores</a>
+                <a href="/">Show all</a>
+                </div>
             </div>
 
             @if (Route::has('login'))
             <div class="hidden fixed top-2 right-0 px-6 py-4 sm:flex">
                 @auth
+                    <a href="/create">Add a post</a>
                     <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf

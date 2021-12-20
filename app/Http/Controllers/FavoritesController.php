@@ -26,10 +26,4 @@ class FavoritesController extends Controller
         ]);
     }
 
-    public function destroy(Post $post)
-    {
-        $post->favorite->delete();
-
-        return back();
-    }
 }

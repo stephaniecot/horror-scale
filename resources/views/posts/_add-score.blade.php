@@ -4,7 +4,8 @@
 
 
 
-@if($post->scores->count() > 0 && $score::where('user_id', Auth::user()->id)->where('post_id', $post->id)->exists())
+{{-- @if($post->scores->count() > 0 && $score::where('user_id', Auth::user()->id)->where('post_id', $post->id)->exists()) --}}
+@if($post->scores->contains('user_id', Auth::user()->id))
 <p>You have already voted</p>
 
 @else

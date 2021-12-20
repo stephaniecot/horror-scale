@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Post;
 use App\Models\Score;
 use Illuminate\Http\Request;
@@ -13,7 +12,7 @@ class ScoresController extends Controller
     {
         return view('scores', [
 
-            'posts' => Post::all()->sortByDesc(function ($post) {
+            'posts' => Post::all()->where('active', 1)->sortByDesc(function ($post) {
             return $post->scores->sum('total_score');
         })
 

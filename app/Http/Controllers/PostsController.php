@@ -50,12 +50,13 @@ class PostsController extends Controller
             'thumbnail' => 'required|image',
             'category_id' => ['required', Rule::exists('categories', 'id')],
             'active' => 'required|boolean',
-            'summary' => 'required'
+            'summary' => 'required',
+            'slug' => 'unique'
         ]);
 
         Post::create([
             'user_id' => request()->user()->id,
-            'slug' => Str::slug(request('title')).'-'.Str::slug(request('author')),
+            'slug' => Str::slug(request('title')).'('.Str::slug(request('author')).')',
             'active' => request()->boolean('active'),
             'title' => request('title'),
             'author' => request('author'),

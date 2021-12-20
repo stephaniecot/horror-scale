@@ -32,7 +32,7 @@ Route::post('posts/{post:slug}/scores', [ScoresController::class, 'store']);
 
 Route::post('posts/{post:slug}', [FavoritesController::class, 'store'])->middleware('auth');
 Route::get('favorites', [FavoritesController::class, 'index'])->middleware('auth');
-Route::delete('favorites', [FavoritesController::class, 'destroy'])->middleware('auth');
+
 
 
 Route::get('/dashboard', function () {
