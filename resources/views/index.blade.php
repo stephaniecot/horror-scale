@@ -12,6 +12,7 @@
             @endforeach
 
         </main>
+        {{ $posts->links() }}
 
     </section>
 

@@ -6,28 +6,28 @@
 
     <div class="mt-6">
       <label for="title">Title</label>
-      <input type="text" name='title' id='title'>
+      <input type="text" name='title' id='title' value='{{old('title')}}'>
       @error('title')
             <span class="text-xs text-red-500">{{ $message }}</span>
         @enderror
     </div>
     <div class="mt-6">
         <label for="author">Author</label>
-        <input type="text" name='author' id='author'>
+        <input type="text" name='author' id='author' value='{{old('author')}}'>
         @error('author')
               <span class="text-xs text-red-500">{{ $message }}</span>
           @enderror
       </div>
       <div class="mt-6">
         <label for="year">Year</label>
-        <input type="text" name='year' id='year'>
+        <input type="text" name='year' id='year' value='{{old('year')}}'>
         @error('year')
               <span class="text-xs text-red-500">{{ $message }}</span>
           @enderror
       </div>
       <div class="mt-6">
         <label for="thumbnail">Thumbnail</label>
-        <input type="file" name="thumbnail" id="thumbnail">
+        <input type="file" name="thumbnail" id="thumbnail" value='{{old('thumbnail')}}'>
         @error('thumbnail')
               <span class="text-xs text-red-500">{{ $message }}</span>
           @enderror
@@ -53,7 +53,7 @@
             name="summary"
             class="w-full text-sm focus:outline-none focus:ring"
             rows="5"
-            placeholder="Give me a summary"></textarea>
+            placeholder="Give me a summary">{{old('summary')}}</textarea>
 
         @error('summary')
             <span class="text-xs text-red-500">{{ $message }}</span>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class PostsController extends Controller
@@ -43,16 +44,20 @@ class PostsController extends Controller
 
     public function store()
     {
+
+
         request()->validate([
-            'title' => 'required',
+            'title' => ['required', Rule::unique('posts', 'title')->where('author', request('author'))],
             'author' => 'required',
             'year' => 'required',
             'thumbnail' => 'required|image',
             'category_id' => ['required', Rule::exists('categories', 'id')],
-            'active' => 'required|boolean',
+            'active' => [Rule::requiredIf(request()->user()->is_admin),'boolean'],
             'summary' => 'required',
             'slug' => 'unique'
         ]);
+
+
 
         Post::create([
             'user_id' => request()->user()->id,
@@ -65,6 +70,7 @@ class PostsController extends Controller
             'summary' => request('summary'),
             'thumbnail' => request()->file('thumbnail')->store('thumbnails')
         ]);
+
         return redirect('/');
     }
 
