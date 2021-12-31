@@ -7,22 +7,10 @@ use App\Http\Controllers\PostScoresController;
 use App\Http\Controllers\ScoresController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-// Route::get('/', function () {
-//     return view('index');
-// });
 
 Route::get('/', [PostsController::class, 'index'])->name('home');
+
+Route::get('posts', [PostsController::class, 'index'])->name('home');
 Route::get('posts/{post:slug}', [PostsController::class, 'show']);
 
 Route::get('create', [PostsController::class, 'create'])->middleware('auth');
@@ -33,9 +21,12 @@ Route::post('posts/{post:slug}/scores', [ScoresController::class, 'store']);
 
 Route::post('posts/{post:slug}', [FavoritesController::class, 'store'])->middleware('auth');
 Route::get('favorites', [FavoritesController::class, 'index'])->middleware('auth');
+Route::delete('favorites/{post}', [FavoritesController::class, 'destroy'])->middleware('auth');
 
 Route::get('admin/posts/', [AdminPostsController::class, 'index'])->middleware('can:admin');
 Route::get('admin/posts/{post}/edit', [AdminPostsController::class, 'edit'])->middleware('can:admin');
+Route::patch('admin/posts/{post}', [AdminPostsController::class, 'update'])->middleware('can:admin');
+Route::delete('admin/posts/{post}', [AdminPostsController::class, 'destroy'])->middleware('can:admin');
 
 
 Route::get('/dashboard', function () {

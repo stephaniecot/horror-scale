@@ -6,7 +6,7 @@
 
         <div class='border border-gray-200 p-6 rounded-xl'>
 
-        <form action="/posts/{{ $post->id }}" method="post" enctype="multipart/form-data">
+        <form action='/admin/posts/{{ $post->id }}' method="post" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
 

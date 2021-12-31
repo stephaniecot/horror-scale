@@ -10,7 +10,7 @@ class ScoresController extends Controller
 {
     public function index()
     {
-        return view('scores', [
+        return view('posts/scores', [
 
             'posts' => Post::all()->where('active', 1)->sortByDesc(function ($post) {
             return $post->scores->sum('total_score');

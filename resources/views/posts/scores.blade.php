@@ -9,7 +9,8 @@
 
             @foreach ($posts as $post)
            <a href="/posts/{{ $post->slug }}"> {{ $post->title }}</a>
-           <h3>{{ $post->scores->sum('total_score') }}</h3>
+           <h3>{{ $post->scores->avg('total_score') }}/10</h3>
+           <h3>{{$post->scores->count()}} votes</h3>
 
             @endforeach
 

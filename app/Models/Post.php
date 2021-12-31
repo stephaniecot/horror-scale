@@ -32,6 +32,8 @@ class Post extends Model
 
     }
 
+
+
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -51,5 +53,19 @@ class Post extends Model
     public function favorite()
     {
         return $this->hasMany(Favorite::class);
+    }
+
+    public static function boot() {
+        parent::boot();
+        self::deleting(function($post) {
+            $post->favorite()->each(function($favorite) {
+                $favorite->delete();
+            });
+        });
+        self::deleting(function($post) {
+            $post->scores()->each(function($score) {
+                $score->delete();
+            });
+        });
     }
 }

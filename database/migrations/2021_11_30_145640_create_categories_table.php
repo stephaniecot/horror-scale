@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateCategoriesTable extends Migration
@@ -19,6 +20,12 @@ class CreateCategoriesTable extends Migration
             $table->string('slug')->unique();
             $table->timestamps();
         });
+        $data = [
+            ['name'=>'book', 'slug'=> 'books'],
+            ['name'=>'movie', 'slug'=> 'movies'],
+            ['name'=>'podcast', 'slug'=>'podcasts']
+        ];
+        DB::table('categories')->insert($data);
     }
 
     /**

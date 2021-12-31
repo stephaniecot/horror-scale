@@ -9,7 +9,7 @@
         <li>{{$post->author}}</li>
         <li>{{$post->year}}</li>
         <li>{{$post->summary}}</li>
-        <li>Total score : {{$post->scores->sum('total_score')}}</li>
+        <li>Total score : {{$post->scores->avg('total_score')}}/10</li>
 
         @include('posts._add-favorites')
 

@@ -15,8 +15,8 @@
                     <img src="/images/logo-black.png" alt="Horror Scale Logo" width="165" height="16">
                 </a>
                 <div class="hidden fixed left-40 top-2 px-6 py-4 sm:flex">
-                <a href="scores">Show by scores</a>
-                <a href="/">Show all</a>
+                <a href="/scores">Show by scores</a>
+                <a href="/posts">Show all</a>
                 </div>
             </div>
 

@@ -19,7 +19,7 @@ class PostsController extends Controller
 
     public function index()
     {
-        return view('index', [
+        return view('posts/index', [
             'posts' => Post::latest()->where('active', 1)
                 ->filter(request(['search', 'category'])
                     )->paginate(18)->withQueryString()
