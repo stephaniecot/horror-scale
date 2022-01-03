@@ -9,7 +9,7 @@
 
 
 <body>
-
+        <div class='wrapper'>
         <nav class="navbar">
                 <a href="/">
                     <img src="/images/logo-white.png" alt="Horror Scale Logo"class='logo-white'>
@@ -49,9 +49,14 @@
             </form>
         @endif
     </nav>
+</div>
 
 
 
     {{ $slot }}
 
 </body>
+
+<footer>
+    
+</footer>

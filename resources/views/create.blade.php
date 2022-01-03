@@ -1,6 +1,9 @@
 <x-layout>
-    <section class="py-8 max-w-md mx-auto">
-<h1><b>Add a post</b></h1>
+    <section>
+        <h1 class='heading'>Add a post</h1>
+<div class="container">
+
+
     <form method="POST" action="/create" enctype="multipart/form-data">
         @csrf
 
@@ -77,7 +80,7 @@
     <div class="flex justify-end mt-6 pt-6 border-t border-gray-200">
         <button type="submit">Submit</button>
     </div>
-
+</div>
     </section>
 
 

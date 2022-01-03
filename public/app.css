@@ -20,6 +20,14 @@ body {
     font-weight: 400;
     line-height: 1.6;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.wrapper{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
 }
 
 nav {
@@ -27,7 +35,9 @@ nav {
     font-size: 1.75rem;
     justify-content: space-evenly;
     align-items: center;
-    padding: 2%;
+    padding: 3%;
+    height: 15vh;
+
 }
 
 nav a {
@@ -51,12 +61,23 @@ nav a:hover {
     width: 25%;
     opacity: 80%;
 }
+header {
+    height: 55vh;
+    padding: 8%;
 
-.container {
-    align-items: center;
+}
+
+footer {
+    height: 20vh;
+}
+
+section {
+    color: white;
+    background-color: #121212;
     display: flex;
-    position:relative;
-
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 /* .52 .92 .78 .92 */
 .heading {
@@ -72,21 +93,60 @@ nav a:hover {
     text-transform: uppercase;
     font-size: large;
     letter-spacing: 5px;
-    padding: 10%;
+    padding: 5%;
 }
 
 .video-banner {
     position: absolute;
+    height: inherit;
     top: 0;
     left: 0;
-    height: 100%;
     width: 100%;
     z-index: -1;
     opacity: .20;
     overflow: hidden;
 }
 .video-content {
-    height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+.heading-secondary {
+    color: #9896C9;
+    font-size: 2rem;
+}
+
+.container {
+    text-align: center;
+    background-color: #1E1E1E;
+    width: 90%;
+    margin: 2%;
+    padding: 1% 0;
+    border-radius: 10px;
+
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+
+}
+
+.card {
+    border: solid 2px #3500D3;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+.card-img {
+    width: 30rem;
+}
+
+.card-heading {
+    font-size: 1.5rem;
+    color: white;
+    text-transform: uppercase;
 }

@@ -1,15 +1,19 @@
 <x-layout>
 
-    <section class='md:flex md:justify-between px-6 py-10'>
+    <section>
 
 
-        <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
+        <main class="container">
 
-
+            <div class="cards-container">
             @foreach ($posts as $post)
-           <a href="/posts/{{ $post->slug }}"> {{ $post->title }}</a>
-
+            <div class="card">
+            <h3 class='card-heading'>{{ $post->title }}</h3>
+            <a href="/posts/{{ $post->slug }}"><img class='card-img' src="{{ asset('storage/' . $post->thumbnail) }}" alt=""></a>
+        </div>
             @endforeach
+
+        </div>
 
         </main>
         {{ $posts->links() }}
