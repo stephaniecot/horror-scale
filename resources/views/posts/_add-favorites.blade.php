@@ -7,7 +7,7 @@
     @method('DELETE')
     @csrf
 
-    <button class='bg-red-500 text-white uppercase font-semibold text-xs py-2 px-10 rounded-2xl hover:bg-red-600'type="submit">
+    <button type="submit">
         Remove from favorites
     </button>
 </form>
@@ -17,7 +17,7 @@
 <form method="post">
     @csrf
 
-    <button class='bg-blue-500 text-white uppercase font-semibold text-xs py-2 px-10 rounded-2xl hover:bg-blue-600'type="submit">
+    <button type="submit">
         Add to favorites
     </button>
 </form>

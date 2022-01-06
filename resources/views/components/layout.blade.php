@@ -1,7 +1,7 @@
 <!doctype html>
 
 <title>Horror Scale</title>
-<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="/app.css">
 {{-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@
                         <a href="{{ route('register') }}">Register</a>
                     @endif
                 @endauth
-                <form method="GET" action="/">
+                <form method="GET" action="/posts">
                 <input type="text"
                        name="search"
                        placeholder="Search"
@@ -58,5 +58,5 @@
 </body>
 
 <footer>
-    
+
 </footer>

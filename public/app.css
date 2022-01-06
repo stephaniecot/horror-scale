@@ -1,3 +1,4 @@
+/* #1E1E1E; */
 * {
     margin: 0;
     padding: 0;
@@ -62,9 +63,8 @@ nav a:hover {
     opacity: 80%;
 }
 header {
-    height: 55vh;
+    height: 30vh;
     padding: 8%;
-
 }
 
 footer {
@@ -73,13 +73,18 @@ footer {
 
 section {
     color: white;
-    background-color: #121212;
+    background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-/* .52 .92 .78 .92 */
+
+.banner {
+    height: 60vh;
+    padding: 8%;
+}
+
 .heading {
     color:#dfd2ff;
     text-shadow:
@@ -96,6 +101,33 @@ section {
     padding: 5%;
 }
 
+.submit-button {
+    background-color: transparent;
+    text-transform: uppercase;
+    border: #783EFF 2px solid;
+    color:#783EFF;
+    font-size: 2rem;
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.submit-button:hover {
+    background-color: #783EFF;
+    box-shadow:
+    0 0 30px rgba(202,228,225,0.34),
+    0 0 12px rgba(53, 0, 211, 0.52),
+    0 0 21px rgba(53, 0, 211, 0.92),
+    0 0 34px rgba(53, 0, 211, 0.78),
+    0 0 54px rgba(53, 0, 211, 0.92);
+    color: white;
+    text-shadow: 0 0 10px white;
+}
+
+.error-msg {
+    color: #FDA58A;
+    font-size: 2rem;
+}
 .video-banner {
     position: absolute;
     height: inherit;
@@ -118,7 +150,7 @@ section {
 
 .container {
     text-align: center;
-    background-color: #1E1E1E;
+    background-color: #121212;
     width: 90%;
     margin: 2%;
     padding: 1% 0;
@@ -136,13 +168,19 @@ section {
 }
 
 .card {
-    border: solid 2px #3500D3;
+    /* border: solid 2px #3500D3; */
     border-radius: 10px;
+    background-color: #1E1E1E;
     padding: 1%;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-img {
     width: 30rem;
+    border-radius: 20%;
+    padding: 2rem;
+    opacity: 80%;
 }
 
 .card-heading {
@@ -150,3 +188,43 @@ section {
     color: white;
     text-transform: uppercase;
 }
+
+.card-rating {
+    font-size: 1.5rem;
+    background-color:#3500D3;
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.post-input {
+    margin:auto;
+    width: 100vh;
+    padding:30px;
+
+}
+
+.post-input input {
+    background-color: #121212;
+    color:white;
+    width: 894px;
+    height: 48px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+
+input:focus {
+    outline: none !important;
+    border-color: #783EFF;
+    box-shadow: 0 0 10px #783EFF;
+}
+

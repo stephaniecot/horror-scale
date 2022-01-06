@@ -1,7 +1,6 @@
 <x-layout>
 
-<section>
-    <main class='container'>
+    <main>
     <ul>
         <li>{{$post->title}}</li>
         <li>{{$post->category->name}}</li>
@@ -26,6 +25,6 @@
    @include('posts._add-score')
 
     </main>
-</section>
+
 
 </x-layout>

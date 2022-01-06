@@ -1,18 +1,26 @@
 <x-layout>
 
-    <section class='md:flex md:justify-between px-6 py-10'>
+    <section>
 
+        <header>
+            <h1 class='heading'>Posts by scores</h1>
+        </header>
+        <main class="container">
 
-        <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
-            <h2>Movies by scores</h2>
+            <div class="cards-container">
+                @foreach ($posts as $post)
+                <div class="card">
+                    <h3 class='card-heading'>{{ $post->title }}</h3>
+                    {{$post->category->name}}
+                    <a href="/posts/{{ $post->slug }}"><img class='card-img'
+                            src="{{ asset('storage/' . $post->thumbnail) }}" alt=""></a>
+                            <h3>{{ $post->scores->avg('total_score') }}/10</h3>
+                            <h3>{{$post->scores->count()}} votes</h3>
 
+                </div>
+                @endforeach
 
-            @foreach ($posts as $post)
-           <a href="/posts/{{ $post->slug }}"> {{ $post->title }}</a>
-           <h3>{{ $post->scores->avg('total_score') }}/10</h3>
-           <h3>{{$post->scores->count()}} votes</h3>
-
-            @endforeach
+            </div>
 
         </main>
 
