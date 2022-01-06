@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
@@ -22,7 +23,8 @@ class PostsController extends Controller
         return view('posts/index', [
             'posts' => Post::latest()->where('active', 1)
                 ->filter(request(['search', 'category'])
-                    )->paginate(18)->withQueryString()
+                    )->paginate(18)->withQueryString(),
+            'categories' => Category::all()
         ]);
     }
 

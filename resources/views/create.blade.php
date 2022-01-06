@@ -5,7 +5,7 @@
         </header>
 
         <div class="container">
-            <div class="post-input">
+            <div class="post-form">
 
                 <form method="POST" action="/create" enctype="multipart/form-data">
                     @csrf
@@ -19,14 +19,14 @@
                     </div>
                     <div>
                         <label for="author">Author</label>
-                        <input type="text" name='author' id='author' value='{{old('author')}}'>
+                        <input type="text" name='author' id='author' placeholder='Movie Director, Book Author, Podcast Host, etc.' value='{{old('author')}}'>
                         @error('author')
                         <span class='error-msg'>{{ $message }}</span>
                         @enderror
                     </div>
                     <div>
                         <label for="year">Year</label>
-                        <input type="text" name='year' id='year' value='{{old('year')}}'>
+                        <input type="text" name='year' id='year' placeholder='Original Release Date'value='{{old('year')}}'>
                         @error('year')
                         <span class='error-msg'>{{ $message }}</span>
                         @enderror
@@ -55,8 +55,8 @@
                     </div>
                     <div>
                         <label for="summary">Summary</label>
-                        <textarea name="summary" class="w-full text-sm focus:outline-none focus:ring" rows="5"
-                            placeholder="Give me a summary">{{old('summary')}}</textarea>
+                        <textarea name="summary" rows="5"
+                            placeholder="Write a small plot summary">{{old('summary')}}</textarea>
 
                         @error('summary')
                         <span class='error-msg'>{{ $message }}</span>

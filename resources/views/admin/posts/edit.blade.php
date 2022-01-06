@@ -1,46 +1,50 @@
 <x-layout>
-    <section class="py-8 max-w-xl mx-auto">
-        <h1 class="text-lg font-bold mb-4">
-            Edit Post : {{$post->title}}
-        </h1>
+    <section>
+        <header>
+            <h1 class="heading">
+                Edit Post : {{$post->title}}
+            </h1>
+        </header>
 
-        <div class='border border-gray-200 p-6 rounded-xl'>
+
+        <div class='container'>
+            <div class="post-form">
 
         <form action='/admin/posts/{{ $post->id }}' method="post" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
 
-        <div class="mt-6">
+        <div>
             <label for="title">Title</label>
             <input type="text" name='title' id='title' value="{{$post->title}}"}}'>
             @error('title')
-                  <span class="text-xs text-red-500">{{ $message }}</span>
+                  <span class="error-msg">{{ $message }}</span>
               @enderror
           </div>
-          <div class="mt-6">
+          <div>
             <label for="author">Author</label>
             <input type="text" name='author' id='author' value="{{$post->author}}"}}'>
             @error('author')
-                  <span class="text-xs text-red-500">{{ $message }}</span>
+                  <span class="error-msg">{{ $message }}</span>
               @enderror
           </div>
-          <div class="mt-6">
+          <div>
             <label for="year">Year</label>
             <input type="text" name='year' id='year' value="{{$post->year}}"}}'>
             @error('year')
-                  <span class="text-xs text-red-500">{{ $message }}</span>
+                  <span class="error-msg">{{ $message }}</span>
               @enderror
           </div>
-          <div class="mt-6">
+          <div class='img-form'>
             <label for="thumbnail">Thumbnail</label>
             <input type="file" name="thumbnail" id="thumbnail" value="{{$post->thumbnail}}">
-            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl" width='150'>
+            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" width='150'>
             @error('thumbnail')
-                  <span class="text-xs text-red-500">{{ $message }}</span>
+                  <span class="error-msg">{{ $message }}</span>
               @enderror
           </div>
 
-        <div class="mt-6">
+        <div>
                 <label for="category">Category</label>
                 <select name="category_id" id='category_id'>
                     @foreach (\App\Models\Category::all() as $category)
@@ -51,22 +55,21 @@
                     @endforeach
                 </select>
             @error('category')
-                <span class="text-xs text-red-500">{{ $message }}</span>
+                <span class="error-msg">{{ $message }}</span>
             @enderror
         </div>
-        <div class="mt-6">
+        <div>
             <label for="summary">Summary</label>
             <textarea
                 name="summary"
-                class="w-full text-sm focus:outline-none focus:ring"
                 rows="5"
                 placeholder="Give me a summary">{{$post->summary}}</textarea>
 
             @error('summary')
-                <span class="text-xs text-red-500">{{ $message }}</span>
+                <span class="error-msg">{{ $message }}</span>
             @enderror
         </div>
-        <div class="mt-6">
+        <div>
         @can('admin')
         <label for="active">
             Online
@@ -82,18 +85,19 @@
             @endif
         </select>
         @error('active')
-                <span class="text-xs text-red-500">{{ $message }}</span>
+                <span class="error-msg">{{ $message }}</span>
             @enderror
         @endcan
         </div>
 
-        <div class="flex justify-end mt-6 pt-6 border-t border-gray-200">
-            <button type="submit">Submit</button>
+        <div>
+            <button class='submit-button' type="submit">Submit</button>
         </div>
 
 
         </form>
     </div>
+</div>
     </section>
 
 

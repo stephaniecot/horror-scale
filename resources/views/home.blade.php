@@ -20,7 +20,7 @@
                     @foreach ($scores->take(3) as $score)
                     <div class="card">
                         <h3 class='card-heading'>{{ $score->title }}</h3>
-                        {{$score->category->name}}
+                        {{ucwords($score->category->name)}}
                         <a href="/posts/{{ $score->slug }}"><img class='card-img'
                             src="{{ asset('storage/' . $score->thumbnail) }}" alt=""></a>
                             <span class='card-rating'>{{$score->scores->avg('total_score')}}</span>
@@ -35,7 +35,14 @@
             <div class="container">
                 <h2 class='heading-secondary'>Add some weight on the horror scale</h2>
                 <h3>I want to rate ...</h3>
-               
+                <div class="cards-container">
+                @foreach ($categories as $category)
+                <div class="card">
+                    <a href="/posts?category={{ $category->slug }}"><h4>{{ucwords($category->slug)}}</h4></a>
+                </div>
+                @endforeach
+            </div>
+
             </div>
         </section>
 

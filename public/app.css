@@ -34,17 +34,17 @@ body {
 nav {
     display:flex;
     font-size: 1.75rem;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     padding: 3%;
     height: 15vh;
-
 }
 
 nav a {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
+    padding: 1%;
 }
 
 nav a:hover {
@@ -59,9 +59,11 @@ nav a:hover {
     font-weight: 700;
 }
 .logo-white {
-    width: 25%;
+    width: 150px;
     opacity: 80%;
 }
+
+
 header {
     height: 30vh;
     padding: 8%;
@@ -98,7 +100,8 @@ section {
     text-transform: uppercase;
     font-size: large;
     letter-spacing: 5px;
-    padding: 5%;
+    padding-top: 5%;
+
 }
 
 .submit-button {
@@ -109,7 +112,9 @@ section {
     font-size: 2rem;
     padding: 2rem;
     border-radius: 10px;
-    margin: 10px;
+    margin: 2%;
+    cursor: pointer;
+    transition: .5s;
 }
 
 .submit-button:hover {
@@ -168,17 +173,18 @@ section {
 }
 
 .card {
-    /* border: solid 2px #3500D3; */
     border-radius: 10px;
     background-color: #1E1E1E;
     padding: 1%;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .card-img {
     width: 30rem;
-    border-radius: 20%;
+    height:100%;
     padding: 2rem;
     opacity: 80%;
 }
@@ -201,30 +207,80 @@ section {
 
 }
 
-.post-input {
-    margin:auto;
-    width: 100vh;
-    padding:30px;
+.post-form {
+    height: 100%;
+    display: flex;
+    padding: 30px 50px;
+    flex-direction: column;
 
 }
 
-.post-input input {
-    background-color: #121212;
+.post-form label {
+    display: block;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    padding: .5%;
+    color: rgba(255, 255, 255, 0.61);
+}
+
+.post-form input,
+.post-form select,
+.post-form textarea {
+    background-color: #1e1e1e;
     color:white;
-    width: 894px;
-    height: 48px;
     border: none;
     border-radius: 10px;
     font-size: 18px;
-    color: #fff;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-bottom: 20px;
+   width: 30%;
+   display: inline;
+   padding: .5%;
+   text-align: center;
+   font-family: "Open Sans", sans-serif;
 }
 
-input:focus {
+
+input:focus,
+select:focus,
+textarea:focus {
     outline: none !important;
     border-color: #783EFF;
     box-shadow: 0 0 10px #783EFF;
 }
 
+select:checked {
+    background-color: red;
+}
+
+input[type=file]::file-selector-button {
+    border: 2px solid #783EFF;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #783EFF;
+    transition: 1s;
+    cursor: pointer;
+  }
+
+
+
+  input[type=file]::file-selector-button:hover {
+    background-color: #783EFF;
+    box-shadow:
+    0 0 30px rgba(202,228,225,0.34),
+    0 0 12px rgba(53, 0, 211, 0.52),
+    0 0 21px rgba(53, 0, 211, 0.92),
+    0 0 34px rgba(53, 0, 211, 0.78),
+    0 0 54px rgba(53, 0, 211, 0.92);
+    color: white;
+    text-shadow: 0 0 10px white;
+  }
+
+  .img-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .img-form img {
+      margin: 1%;
+  }

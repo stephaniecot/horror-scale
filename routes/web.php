@@ -14,6 +14,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // Route::get('/', [PostsController::class, 'index'])->name('home');
 
 Route::get('posts', [PostsController::class, 'index']);
+
+
 Route::get('posts/{post:slug}', [PostsController::class, 'show']);
 
 Route::get('create', [PostsController::class, 'create'])->middleware('auth');
