@@ -104,6 +104,8 @@ section {
 
 }
 
+
+
 .submit-button {
     background-color: transparent;
     text-transform: uppercase;
@@ -127,6 +129,20 @@ section {
     0 0 54px rgba(53, 0, 211, 0.92);
     color: white;
     text-shadow: 0 0 10px white;
+}
+
+.general-button {
+    border: none;
+    text-decoration: none;
+    font-size: 2rem;
+    display: inline-block;
+    cursor: pointer;
+    color: #783EFF;
+    background-color: transparent;
+}
+
+.general-button:hover {
+    color: white;
 }
 
 .error-msg {
@@ -186,7 +202,11 @@ section {
     width: 30rem;
     height:100%;
     padding: 2rem;
-    opacity: 80%;
+    opacity: .7;
+}
+
+.card-img:hover {
+    opacity: 1;
 }
 
 .card-heading {
@@ -284,3 +304,96 @@ input[type=file]::file-selector-button {
   .img-form img {
       margin: 1%;
   }
+
+  .post-info-card {
+    display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     align-content: space-between;
+     color:white;
+     font-size: 1.5rem;
+  }
+
+  .post-info-card div {
+    width: 33%;
+    text-align: left;
+    padding: 1%;
+
+
+  }
+.post-info-details p {
+
+    text-align: justify;
+}
+
+  .post-info-img {
+      width: 300px;
+      flex-grow: 0;
+  }
+
+.score-form {
+    color:white;
+}
+
+
+input[type="range"]{
+    -webkit-appearance:none;
+    width:160px;
+    height:20px;
+    margin:10px 50px;
+    background: linear-gradient(to right, #f1f2f3 0%, #55209a 100%);
+    background-size:150px 10px;
+    background-position:center;
+    background-repeat:no-repeat;
+    overflow:hidden;
+    outline: none;
+  }
+
+  input[type="range"]:first-of-type{
+    margin-top:30px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    cursor: pointer;
+    width:20px;
+    height:20px;
+    background:white;
+    border-radius: 10px;
+    position:relative;
+    z-index:3;
+    box-shadow:0 0 30px rgba(202,228,225,0.34),
+    0 0 12px rgba(53, 0, 211, 0.52),
+    0 0 21px rgba(53, 0, 211, 0.92),
+    0 0 34px rgba(53, 0, 211, 0.78),
+    0 0 54px rgba(53, 0, 211, 0.92);
+  }
+
+.img-container {
+position: relative;
+  text-align: center;
+  color: white;
+  opacity: 0.6;
+}
+.img-link {
+    height: 300px;
+    position:relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.centered {
+    font-size: 3rem;
+    color:white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .img-container:hover {
+    opacity: 1;
+
+    }
+
+

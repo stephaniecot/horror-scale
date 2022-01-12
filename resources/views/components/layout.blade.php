@@ -58,7 +58,8 @@
 
     {{ $slot }}
 <footer>
-
+<a href="#">About</a>
+<a href="#">Contact</a>
 </footer>
 
 </body>

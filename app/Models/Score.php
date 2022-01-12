@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Score extends Model
 {
-    protected $fillable = ['user_id', 'total_score'];
+    protected $fillable = ['user_id', 'total_score', 'comment', 'spooky_score', 'suspense_score', 'gore_score', 'disturbing_score'];
 
     use HasFactory;
 

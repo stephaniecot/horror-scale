@@ -45,7 +45,7 @@ class ScoresController extends Controller
 
         return back();
     }else {
-        //TODO: arranger le message d'erreur
+      
         return back()->with('warning', 'You have already voted.');
     }
     }

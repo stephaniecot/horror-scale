@@ -1,4 +1,4 @@
-<section>
+<div class="score-form">
 
 @auth
 
@@ -16,7 +16,7 @@
 
     <header>
 
-        <h2>Add some weight on the scale</h2>
+        <h2 class='heading-secondary'>Add some weight on the scale</h2>
     </header>
 
     <div>
@@ -32,7 +32,7 @@
     </div>
     <div class="mt-6">
         <label for="total-score">Total Score</label>
-        <input type="text" name='total-score' id='total-score'>
+        <input type="range" min='0' max='10' name='total-score' id='total-score'>
 
         @error('total-score')
             <span>{{ $message }}</span>
@@ -41,7 +41,7 @@
 
     <div>
         <label for="spooky-score">Spooky</label>
-        <input type="text" name='spooky-score' id='spooky-score'>
+        <input type="range" min='0' max='5' name='spooky-score' id='spooky-score'>
 
         @error('spooky-score')
             <span>{{ $message }}</span>
@@ -50,7 +50,7 @@
 
     <div>
         <label for="suspense-score">Suspense Score</label>
-        <input type="text" name='suspense-score' id='suspense-score'>
+        <input type="range" min='0' max='5' name='suspense-score' id='suspense-score'>
 
         @error('suspense-score')
             <span>{{ $message }}</span>
@@ -59,7 +59,7 @@
 
     <div>
         <label for="gore-score">Gore Score</label>
-        <input type="text" name='gore-score' id='gore-score'>
+        <input type="range" min='0' max='5' name='gore-score' id='gore-score'>
 
         @error('gore-score')
             <span>{{ $message }}</span>
@@ -68,7 +68,7 @@
 
     <div>
         <label for="disturbing-score">Disturbing Score</label>
-        <input type="text" name='disturbing-score' id='disturbing-score'>
+        <input type="range" min='0' max='5' name='disturbing-score' id='disturbing-score'>
 
         @error('disturbing-score')
             <span>{{ $message }}</span>
@@ -76,7 +76,7 @@
     </div>
 
     <div>
-        <button type="submit">Submit</button>
+        <button class='submit-button' type="submit">Submit</button>
     </div>
 </form>
 @endif
@@ -90,4 +90,4 @@
 </p>
 @endauth
 
-</section>
+</div>
