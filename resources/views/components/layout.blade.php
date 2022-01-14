@@ -33,11 +33,11 @@
                         <x-dropdown-link :href="route('logout')"
                                 onclick="event.preventDefault();
                                             this.closest('form').submit();">
-                            {{ __('Log Out') }}
+                            {{ __('Logout') }}
                         </x-dropdown-link>
                     </form>
                 @else
-                    <a href="{{ route('login') }}" >Log in</a>
+                    <a href="{{ route('login') }}" >Login</a>
 
                     @if (Route::has('register'))
                         <a href="{{ route('register') }}">Register</a>

@@ -60,7 +60,7 @@ nav a:hover {
 }
 .logo-white {
     width: 150px;
-    opacity: 80%;
+    opacity: 90%;
 }
 
 
@@ -179,6 +179,14 @@ section {
 
 }
 
+.auth-container {
+    text-align: center;
+    width: 90%;
+    margin: 2%;
+    padding: 1% 0;
+
+}
+
 .cards-container {
     display: flex;
     flex-direction: row;
@@ -227,7 +235,7 @@ section {
 
 }
 
-.post-form {
+.general-form {
     height: 100%;
     display: flex;
     padding: 30px 50px;
@@ -235,7 +243,7 @@ section {
 
 }
 
-.post-form label {
+.general-form label {
     display: block;
     text-transform: uppercase;
     font-size: 1.5rem;
@@ -243,9 +251,9 @@ section {
     color: rgba(255, 255, 255, 0.61);
 }
 
-.post-form input,
-.post-form select,
-.post-form textarea {
+.general-form input,
+.general-form select,
+.general-form textarea {
     background-color: #1e1e1e;
     color:white;
     border: none;
@@ -270,6 +278,13 @@ textarea:focus {
 select:checked {
     background-color: red;
 }
+
+input[type=checkbox] {
+    border-color: #783EFF;
+    width: 1%;
+}
+
+
 
 input[type=file]::file-selector-button {
     border: 2px solid #783EFF;

@@ -8,7 +8,7 @@
 
 
         <div class='container'>
-            <div class="post-form">
+            <div class="general-form">
 
         <form action='/admin/posts/{{ $post->id }}' method="post" enctype="multipart/form-data">
         @csrf

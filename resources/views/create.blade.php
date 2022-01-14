@@ -5,7 +5,7 @@
         </header>
 
         <div class="container">
-            <div class="post-form">
+            <div class="general-form">
 
                 <form method="POST" action="/create" enctype="multipart/form-data">
                     @csrf
