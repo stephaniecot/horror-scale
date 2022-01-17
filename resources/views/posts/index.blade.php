@@ -3,15 +3,15 @@
     <section>
 
         <header>
-            <h1 class='heading'>All Posts</h1>
+            <h1 class='heading'>All Media</h1>
         </header>
         <main class="container">
 
 
-               <div>
-                   <a class='general-button' href="/posts">See All</a>
+               <div class='filters'>
+                   <a class='white-link' href="/posts">All Categories</a>
                    @foreach ($categories as $category)
-                   <a class='general-button'href="/posts?category={{ $category->slug }}">{{ucwords($category->name)}}</a>
+                   <a class='white-link' href="/posts?category={{ $category->slug }}">{{ucwords($category->name)}}s</a>
                    @endforeach
                 </div>
 
@@ -28,9 +28,9 @@
                 @endforeach
 
             </div>
-
+            {{ $posts->links() }}
         </main>
-        {{ $posts->links() }}
+
 
     </section>
 

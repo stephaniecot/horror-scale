@@ -3,7 +3,7 @@
     <section>
 
         <header>
-            <h1 class='heading'>Posts by scores</h1>
+            <h1 class='heading'>Media by scores</h1>
         </header>
         <main class="container">
 
@@ -21,7 +21,7 @@
                 @endforeach
 
             </div>
-
+       
         </main>
 
     </section>

@@ -1,36 +1,46 @@
-<x-guest-layout>
+<x-layout>
+
+    <header>
+        <h1 class='heading'>Confirm password</h1>
+    </header>
+
+<section>
+    <div class='auth-container'>
+
+
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <x-application-logo />
             </a>
         </x-slot>
 
-        <div class="mb-4 text-sm text-gray-600">
+        <div class='heading-secondary'>
             {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
         </div>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
+        <x-auth-validation-errors :errors="$errors" />
 
         <form method="POST" action="{{ route('password.confirm') }}">
             @csrf
 
-            <!-- Password -->
             <div>
-                <x-label for="password" :value="__('Password')" />
+                <label for="password">Password</label>
 
-                <x-input id="password" class="block mt-1 w-full"
+                <input id="password"
                                 type="password"
                                 name="password"
                                 required autocomplete="current-password" />
             </div>
 
-            <div class="flex justify-end mt-4">
-                <x-button>
+            <div>
+                <button type='submit' class="submit-button">
                     {{ __('Confirm') }}
-                </x-button>
+                </button>
             </div>
         </form>
     </x-auth-card>
-</x-guest-layout>
+</div>
+</section>
+</x-layout>

@@ -6,6 +6,7 @@ use App\Models\Score;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class ScoresController extends Controller
 {
     public function index()
@@ -45,7 +46,7 @@ class ScoresController extends Controller
 
         return back();
     }else {
-      
+
         return back()->with('warning', 'You have already voted.');
     }
     }

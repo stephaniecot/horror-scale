@@ -24,6 +24,8 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+
 .wrapper{
     position: fixed;
     width: 100%;
@@ -31,13 +33,20 @@ body {
     z-index: 1;
 }
 
-nav {
+.navbar {
     display:flex;
-    font-size: 1.75rem;
+    font-size: 1.7rem;
     justify-content: space-between;
     align-items: center;
     padding: 3%;
     height: 15vh;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    height: auto;
 }
 
 nav a {
@@ -45,6 +54,7 @@ nav a {
     text-decoration: none;
     text-transform: uppercase;
     padding: 1%;
+    transition: .5s;
 }
 
 nav a:hover {
@@ -58,6 +68,37 @@ nav a:hover {
     0 0 54px rgba(53, 0, 211, 0.92);
     font-weight: 700;
 }
+
+nav button {
+    font-size: 24px;
+    background-color: transparent;
+    color: white;
+    border: transparent;
+    cursor: pointer;
+    transition: .5s;
+}
+
+nav button:hover {
+   color: #783EFF;
+}
+
+.nav-colored {
+    background-color: black;
+}
+
+.searchbar {
+    font-size: 1.7rem;
+    background-color: #1e1e1e;
+    color:white;
+    border: none;
+    border-radius: 10px;
+   width: 80%;
+   padding: .5%;
+   text-align: center;
+}
+
+
+
 .logo-white {
     width: 150px;
     opacity: 90%;
@@ -70,7 +111,33 @@ header {
 }
 
 footer {
-    height: 20vh;
+    height: 25vh;
+    padding: 2px;
+    color: #9896C9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    padding: 2px;
+    transition: .5s;
+}
+
+footer a:hover {
+    color: #783EFF;
+}
+
+.socials {
+    font-size: 32px;
+}
+
+.footer-links {
+    font-size: 16px;
+
 }
 
 section {
@@ -83,10 +150,13 @@ section {
 }
 
 .banner {
-    height: 60vh;
+    height: 65vh;
     padding: 8%;
 }
 
+.banner .heading {
+    padding-top: 5%;
+}
 .heading {
     color:#dfd2ff;
     text-shadow:
@@ -139,14 +209,86 @@ section {
     cursor: pointer;
     color: #783EFF;
     background-color: transparent;
+    transition: 0.5s;
 }
 
 .general-button:hover {
     color: white;
 }
 
+.manage-posts-container {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    font-size: 1.75rem;
+    padding: 1%;
+}
+
+tr th {
+    background-color: #9896C9;
+}
+
+tr td,
+tr th {
+    padding: 5px;
+}
+
+.online-span {
+    background-color:#80CBC4 ;
+    padding: 5%;
+    border-radius: 10px;
+    color: black;
+    margin: 2px;
+}
+.offline-span {
+    background-color: #CF6679;
+    padding: 5%;
+    border-radius: 10px;
+    color: black;
+}
+
+.delete-button {
+    padding: 5px;
+    color: #EF9A9A;
+    border: 2px solid#EF9A9A;
+    border-radius: 10px;
+    font-size: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: bold;
+}
+.delete-button:hover {
+   color:#E57373;
+   border: 2px solid#E57373;
+}
+
+.small-link {
+    color: #9896C9;
+    text-decoration: none;
+}
+.small-link:hover {
+    color: white;
+}
+
+.white-link {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+
+}
+
+.white-link:hover {
+    background-color: white;
+    border-radius: 10px;
+    color:#3500D3;
+}
+
+
 .error-msg {
-    color: #FDA58A;
+    color: #EF9A9A;
     font-size: 2rem;
 }
 .video-banner {
@@ -177,6 +319,11 @@ section {
     padding: 1% 0;
     border-radius: 10px;
 
+}
+
+.container p {
+    font-size: 1.75rem;
+    padding: 5%;
 }
 
 .auth-container {
@@ -211,6 +358,7 @@ section {
     height:100%;
     padding: 2rem;
     opacity: .7;
+    transition: 0.5s;
 }
 
 .card-img:hover {
@@ -233,6 +381,18 @@ section {
     text-align: center;
     font-weight: bold;
 
+}
+
+.filters {
+    border-radius: 10px;
+    margin: 1% 5% 2% 5%;
+    background-color: #3500D3;
+    padding: 5px;
+
+}
+
+.filters a {
+    padding: 8px;
 }
 
 .general-form {
@@ -259,7 +419,7 @@ section {
     border: none;
     border-radius: 10px;
     font-size: 18px;
-   width: 30%;
+   width: 40%;
    display: inline;
    padding: .5%;
    text-align: center;
@@ -275,9 +435,7 @@ textarea:focus {
     box-shadow: 0 0 10px #783EFF;
 }
 
-select:checked {
-    background-color: red;
-}
+
 
 input[type=checkbox] {
     border-color: #783EFF;
@@ -389,6 +547,7 @@ position: relative;
   text-align: center;
   color: white;
   opacity: 0.6;
+  transition: 0.5s;
 }
 .img-link {
     height: 300px;

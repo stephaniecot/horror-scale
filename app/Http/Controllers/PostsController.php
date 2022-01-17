@@ -23,7 +23,7 @@ class PostsController extends Controller
         return view('posts/index', [
             'posts' => Post::latest()->where('active', 1)
                 ->filter(request(['search', 'category'])
-                    )->paginate(18)->withQueryString(),
+                    )->simplePaginate(12)->withQueryString(),
             'categories' => Category::all()
         ]);
     }

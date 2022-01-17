@@ -29,7 +29,7 @@
             </div>
 
 
-            <div class="mt-4">
+            <div>
                 <label for="password">Password</label>
 
                 <input id="password"
@@ -40,7 +40,7 @@
 
 
             <div>
-                <label for="remember_me" class="inline-flex items-center">
+                <label for="remember_me">
                     <input id="remember_me" type="checkbox" name="remember">
                     <span>{{ __('Remember me') }}</span>
                 </label>
@@ -53,7 +53,7 @@
                     </a>
                 @endif
 
-                <button class="submit-button">
+                <button type='submit' class="submit-button">
                     {{ __('Login') }}
                 </button>
             </div>

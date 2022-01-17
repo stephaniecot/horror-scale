@@ -12,7 +12,7 @@ class AdminPostsController extends Controller
     public function index()
     {
         return view('admin.posts.index', [
-            'posts' => Post::latest()->paginate(15)
+            'posts' => Post::latest()->simplePaginate(20)
         ]);
     }
 
