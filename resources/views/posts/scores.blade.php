@@ -1,17 +1,17 @@
 <x-layout>
-
-    <section>
-
         <header>
             <h1 class='heading'>Media by scores</h1>
         </header>
+    <section>
+
+
         <main class="container">
 
             <div class="cards-container">
                 @foreach ($posts as $post)
                 <div class="card">
                     <h3 class='card-heading'>{{ $post->title }}</h3>
-                    {{$post->category->name}}
+                    {{ucwords($post->category->name)}}
                     <a href="/posts/{{ $post->slug }}"><img class='card-img'
                             src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{$post->title}} thumbnail"></a>
                             <h3>{{ $post->scores->avg('total_score') }}/10</h3>
@@ -21,7 +21,7 @@
                 @endforeach
 
             </div>
-       
+
         </main>
 
     </section>

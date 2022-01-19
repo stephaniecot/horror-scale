@@ -1,10 +1,10 @@
 <x-layout>
-
-    <section>
-
-        <header>
+ <header>
             <h1 class='heading'>All Media</h1>
         </header>
+    <section>
+
+
         <main class="container">
 
 

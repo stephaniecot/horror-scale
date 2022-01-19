@@ -37,20 +37,12 @@
 
 
 <div class="container">
-    <ul>
 
+    <div class='scores-container'>
         @include('posts._add-score')
+        @include('posts._users-ratings')
 
-
-
-
-        @foreach ($post->scores as $score)
-        <li>{{$score->user->username}}</li>
-        <li>{{$score->total_score}}</li>
-        <li>{{$score->comment}}</li>
-        @endforeach
-
-    </ul>
+    </div>
 </div>
 
         </main>

@@ -1,10 +1,12 @@
 <x-layout>
-    <section>
-        <header>
+    <header>
             <h1 class="heading">
                 Edit Post : {{$post->title}}
             </h1>
         </header>
+
+        <section>
+
 
 
         <div class='container'>

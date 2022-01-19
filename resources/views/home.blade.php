@@ -33,15 +33,6 @@
         </section>
         <section>
             <div class="container">
-                <h2 class="heading-secondary">Your #1 reference for everything horror related!</h2>
-
-                <p>Horror Scale </p>
-                </div>
-
-
-        </section>
-        <section>
-            <div class="container">
                 <h2 class='heading-secondary'>Add some weight on the Horror Scale</h2>
                 <p>I want to rate ...</p>
                 <div class="cards-container">

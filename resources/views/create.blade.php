@@ -1,8 +1,9 @@
 <x-layout>
-    <section>
-        <header>
+    <header>
             <h1 class='heading'>Add a post</h1>
         </header>
+        <section>
+
 
         <div class="container">
             <div class="general-form">

@@ -14,16 +14,15 @@
 <form method="POST" action="/posts/{{ $post->slug }}/scores">
     @csrf
 
-    <header>
 
         <h2 class='heading-secondary'>Add some weight on the scale</h2>
-    </header>
+
 
     <div>
         <label for="comment">Comment</label>
         <textarea
             name="comment"
-            rows="5"
+            rows="3"
             placeholder="Review this {{$post->category->name}}"></textarea>
 
         @error('comment')

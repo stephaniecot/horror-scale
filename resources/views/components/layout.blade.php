@@ -12,56 +12,60 @@
 
 
 <body>
-    <div class='wrapper'>
+    <div class='wrapper' id='wrapper'>
         <nav>
-            <div id='nav' class="navbar">
-                <a href="/">
-                    <img src="/images/logo-white.png" alt="Horror Scale Logo" class='logo-white'>
-                </a>
-                <button id='menu-icon' hidden>
+            <div id='nav' class="mobile-nav">
+                <div>
+                    <a id='logo' href="/">
+                        <img src="/images/logo-white.png" alt="Horror Scale Logo" class='logo-white'>
+                    </a>
+                </div>
+
+                <button id='menu-icon'>
                     <ion-icon name="menu-outline"></ion-icon>
                 </button>
-                <a href="/scores">Show by scores</a>
-                <a href="/posts">Show all</a>
+                <div id='nav-link'>
+                    <a href="/scores">Show by scores</a>
+                    <a href="/posts">Show all</a>
 
 
 
-                @if (Route::has('login'))
+                    @if (Route::has('login'))
 
-                @auth
-                <a href="/create">Add a post</a>
-                <a href="{{ url('/favorites') }}">My Favorites</a>
-                @can('admin')
-                <a href="{{ url('/admin/posts') }}">manage posts</a>
-                @endcan
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
+                    @auth
+                    <a href="/create">Add a post</a>
+                    <a href="{{ url('/favorites') }}">My Favorites</a>
+                    @can('admin')
+                    <a href="{{ url('/admin/posts') }}">manage posts</a>
+                    @endcan
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
 
-                    <a href="route('logout')" onclick="event.preventDefault();
+                        <a href="route('logout')" onclick="event.preventDefault();
                                             this.closest('form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-                </form>
-
-
-                @else
-                <a href="{{ route('login') }}">Login</a>
-
-                @if (Route::has('register'))
-                <a href="{{ route('register') }}">Register</a>
-                @endif
-                @endauth
-                <button id='search-icon'>
-                    <ion-icon name="search-outline"></ion-icon>
-                </button>
-                <div id='search-box' hidden>
-                    <form method="GET" action="/posts">
-                        <input type="text" name="search" placeholder="Search" class="searchbar"
-                            value="{{ request('search') }}">
+                            {{ __('Logout') }}
+                        </a>
                     </form>
-                </div>
-                @endif
 
+
+                    @else
+                    <a href="{{ route('login') }}">Login</a>
+
+                    @if (Route::has('register'))
+                    <a href="{{ route('register') }}">Register</a>
+                    @endif
+                    @endauth
+                    <button id='search-icon'>
+                        <ion-icon name="search-outline"></ion-icon>
+                    </button>
+                    <div id='search-box' hidden>
+                        <form method="GET" action="/posts">
+                            <input type="text" name="search" placeholder="Search" class="searchbar"
+                                value="{{ request('search') }}">
+                        </form>
+                    </div>
+                    @endif
+                </div>
             </div>
         </nav>
     </div>

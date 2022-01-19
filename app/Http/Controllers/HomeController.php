@@ -13,7 +13,7 @@ class HomeController extends Controller
         return view('home')
         ->with('posts', Post::all()->where('active', 1))
         ->with('scores', Post::all()->where('active', 1)->sortByDesc(function ($post) {
-            return $post->scores->sum('total_score');
+            return $post->scores->avg('total_score');
         }))
         ->with('categories', Category::all());
     }

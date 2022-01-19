@@ -1,8 +1,10 @@
 <x-layout>
-    <section>
     <header>
         <h1 class='heading'>My Favorites</h1>
     </header>
+
+    <section>
+
 
     <main class="container">
         @if ($favorites->count()==0)

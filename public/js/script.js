@@ -1,24 +1,40 @@
-// document.getElementById('menu-icon').addEventListener('click', function(){
-//     alert('HELLO');
-// })
 let menuButton = document.getElementById('menu-icon');
-let navbar = document.getElementById('nav');
+let navBar = document.getElementById('nav');
+let navLink = document.getElementById('nav-link');
 let searchIcon = document.getElementById('search-icon');
 let searchBar = document.getElementById('search-box');
+let logo = document.getElementById('logo');
+let navWrapper = document.getElementById('wrapper');
+
 
 searchIcon.addEventListener('click', function() {
     searchBar.toggleAttribute('hidden');
 })
 
 window.onscroll = function() {scrollMenu()};
-console.log(menuButton)
+
 function scrollMenu() {
   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    navbar.classList.add('nav-colored');
-    menuButton.removeAttribute('hidden');
+    navBar.classList.add('nav-colored');
+
+    logo.hidden =true;
   }
   else {
-      navbar.classList.remove('nav-colored');
-      menuButton.hidden= true;
+      navBar.classList.remove('nav-colored');
+
+      logo.hidden =false;
+
   }
 }
+
+menuButton.addEventListener('click', function() {
+
+    if(['none', ''].includes(navLink.style.display)) {
+    navLink.style.display = 'flex';
+    navWrapper.style.backgroundColor = 'black';
+} else {
+    navLink.style.display = 'none';
+    navWrapper.style.backgroundColor = 'transparent';
+}
+
+})
