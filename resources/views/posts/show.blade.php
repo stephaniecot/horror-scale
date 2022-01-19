@@ -3,7 +3,7 @@
 
     </header>
     <main>
-
+        <section>
         <div class="container">
         <div class="post-info-card">
             <div class="post-info-left">
@@ -22,14 +22,15 @@
                 <p>{{$post->summary}}</p>
             </div>
             <div class="post-info-score">
-                <h3>Total :{{ $post->scores->avg('total_score') }}/10</h3>
-                <h3>Spooky :{{ $post->scores->avg('spooky_score') }}</h3>
-                <h3>Suspense :{{ $post->scores->avg('suspense_score') }}</h3>
-                <h3>Gore :{{ $post->scores->avg('gore_score') }}</h3>
-                <h3>Disturbing :{{ $post->scores->avg('disturbing_score') }}</h3>
 
-
-                <h3>{{$post->scores->count()}} votes</h3>
+                <h2 class='heading-secondary'>Score</h2>
+                @if ($post->scores->count()===0)
+                No score yet
+                @else
+                <h3>Total Score:</h3>
+                <span class='score-span'><h4>{{ $post->scores->avg('total_score') }}</h4></span>
+                <h4>{{$post->scores->count()}} votes</h4>
+                @endif
 
             </div>
         </div>
@@ -44,7 +45,7 @@
 
     </div>
 </div>
-
+</section>
         </main>
 
 

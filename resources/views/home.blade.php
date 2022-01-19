@@ -24,11 +24,11 @@
                         {{ucwords($score->category->name)}}
                         <a href="/posts/{{ $score->slug }}"><img class='card-img'
                             src="{{ asset('storage/' . $score->thumbnail) }}" alt="{{$score->title}} thumbnail"></a>
-                            <span class='card-rating'>{{$score->scores->avg('total_score')}}</span>
+
                     </div>
                     @endforeach
                 </div>
-                <a href="/scores">All scores</a>
+                <a class='small-link' href="/scores">All scores</a>
             </div>
         </section>
         <section>

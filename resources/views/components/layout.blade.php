@@ -3,6 +3,8 @@
 <title>Horror Scale</title>
 <link rel="stylesheet" href="/app.css">
 
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
 {{-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <script src="//unpkg.com/alpinejs" defer></script>
@@ -15,46 +17,60 @@
     <div class='wrapper' id='wrapper'>
         <nav>
             <div id='nav' class="mobile-nav">
-                <div>
+                <div class='logo-box'>
                     <a id='logo' href="/">
                         <img src="/images/logo-white.png" alt="Horror Scale Logo" class='logo-white'>
                     </a>
                 </div>
+                <div class='menu-box'>
+                    <div>
+                    <button id='menu-icon'>
+                        <ion-icon name="menu-outline"></ion-icon>
+                    </button>
+                    </div>
 
-                <button id='menu-icon'>
-                    <ion-icon name="menu-outline"></ion-icon>
-                </button>
-                <div id='nav-link'>
-                    <a href="/scores">Show by scores</a>
-                    <a href="/posts">Show all</a>
+                    <div id='nav-link'>
+                        <ul>
+                        <li><button id='close-icon' hidden>
+                            <ion-icon name="close-circle-outline"></ion-icon>
+                        </button></li>
+                        <li id='hidden-logo'>
+                            <a href="/"><img src="/images/logo-white.png" alt="Horror Scale Logo" class='logo-white'></a></li>
+                    <li><a href="/posts">All Media</a></li>
+                        <li><a href="/scores">Media by scores</a></li>
 
+                        @if (Route::has('login'))
 
+                        @auth
+                        <li><a href="/create">Add a post</a></li>
+                        <li><a href="{{ url('/favorites') }}">My Favorites</a></li>
+                        @can('admin')
+                        <li><a href="{{ url('/admin/posts') }}">Manage posts</a></li>
+                        @endcan
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
 
-                    @if (Route::has('login'))
-
-                    @auth
-                    <a href="/create">Add a post</a>
-                    <a href="{{ url('/favorites') }}">My Favorites</a>
-                    @can('admin')
-                    <a href="{{ url('/admin/posts') }}">manage posts</a>
-                    @endcan
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-
-                        <a href="route('logout')" onclick="event.preventDefault();
+                           <li><a href="route('logout')" onclick="event.preventDefault();
                                             this.closest('form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-                    </form>
+                                {{ __('Logout') }}
+                            </a></li>
+                        </form>
 
 
-                    @else
-                    <a href="{{ route('login') }}">Login</a>
+                        @else
+                        <li><a href="{{ route('login') }}">Login</a></li>
 
-                    @if (Route::has('register'))
-                    <a href="{{ route('register') }}">Register</a>
-                    @endif
-                    @endauth
+                        @if (Route::has('register'))
+                        <li><a href="{{ route('register') }}">Register</a></li>
+                        @endif
+                        @endauth
+
+                        @endif
+
+                    </ul>
+                    </div>
+                </div>
+                <div class='searchbar-box'>
                     <button id='search-icon'>
                         <ion-icon name="search-outline"></ion-icon>
                     </button>
@@ -64,7 +80,6 @@
                                 value="{{ request('search') }}">
                         </form>
                     </div>
-                    @endif
                 </div>
             </div>
         </nav>
@@ -87,8 +102,8 @@
 
         </div>
         <div class="footer-links">
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
         </div>
         <p>&copy 2022 Horror Scale </p>
 

@@ -1,4 +1,5 @@
 let menuButton = document.getElementById('menu-icon');
+let closeButton = document.getElementById('close-icon');
 let navBar = document.getElementById('nav');
 let navLink = document.getElementById('nav-link');
 let searchIcon = document.getElementById('search-icon');
@@ -14,7 +15,7 @@ searchIcon.addEventListener('click', function() {
 window.onscroll = function() {scrollMenu()};
 
 function scrollMenu() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     navBar.classList.add('nav-colored');
 
     logo.hidden =true;
@@ -29,12 +30,18 @@ function scrollMenu() {
 
 menuButton.addEventListener('click', function() {
 
-    if(['none', ''].includes(navLink.style.display)) {
+
     navLink.style.display = 'flex';
+    closeButton.hidden = false;
     navWrapper.style.backgroundColor = 'black';
-} else {
+    menuButton.hidden = true;
+
+
+})
+
+closeButton.addEventListener('click', function() {
     navLink.style.display = 'none';
     navWrapper.style.backgroundColor = 'transparent';
-}
-
+    menuButton.hidden = false;
+    closeButton.hidden = true;
 })
