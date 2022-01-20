@@ -6,6 +6,8 @@ let searchIcon = document.getElementById('search-icon');
 let searchBar = document.getElementById('search-box');
 let logo = document.getElementById('logo');
 let navWrapper = document.getElementById('wrapper');
+let modal = document.getElementById("myModal");
+let closeSpan = document.getElementsByClassName("close")[0];
 
 
 searchIcon.addEventListener('click', function() {
@@ -45,3 +47,11 @@ closeButton.addEventListener('click', function() {
     menuButton.hidden = false;
     closeButton.hidden = true;
 })
+
+
+
+closeSpan.onclick = function() {
+  modal.style.display = "none";
+}
+
+

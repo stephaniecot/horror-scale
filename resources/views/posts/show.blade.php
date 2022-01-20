@@ -47,6 +47,7 @@
 </div>
 </section>
         </main>
+        @include('components.message')
 
 
 </x-layout>

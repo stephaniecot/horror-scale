@@ -30,7 +30,7 @@
             </div>
             {{ $posts->links() }}
         </main>
-
+        @include('components.message')
 
     </section>
 

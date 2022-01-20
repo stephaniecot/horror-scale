@@ -45,10 +45,10 @@ class ScoresController extends Controller
             'total_score' => request('total-score')
         ]);
 
-        return back();
+        return back()->with('message', 'Thanks for your rating!');
     }else {
 
-        return back()->with('warning', 'You have already voted.');
+        return back()->with('message', 'You have already voted.');
     }
     }
 }

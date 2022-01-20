@@ -73,7 +73,7 @@ class PostsController extends Controller
             'thumbnail' => request()->file('thumbnail')->store('thumbnails')
         ]);
 
-        return redirect('/');
+        return redirect('/posts')->with('message', 'Your post was created. Please wait until it is reviewed');
     }
 
 

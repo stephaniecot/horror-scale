@@ -724,6 +724,54 @@ position: relative;
 
 }
 
+/* The Modal (background) */
+.modal {
+
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--bright-mauve);
+    background-color: #783eff4b;
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: black;
+    margin: 15% auto;
+    padding: 1%;
+    border: 2px solid var(--bright-mauve);
+    border-radius: 10px;
+    width: 40%;
+    text-align: center;
+    color: var(--bright-mauve);
+    font-size: 20px;
+
+  }
+
+  .modal-content p {
+      padding-bottom: 3%;
+  }
+
+
+
+  .close {
+    color: var(--bright-mauve);
+    font-size: 28px;
+    font-weight: bold;
+    transition:1s;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
 /* #1E1E1E; */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {

@@ -18,4 +18,6 @@ class HomeController extends Controller
         ->with('categories', Category::all());
     }
 
+   
+
 }

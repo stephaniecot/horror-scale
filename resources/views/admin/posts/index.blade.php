@@ -73,6 +73,6 @@
                     </main>
 
 
-
+                    @include('components.message')
 
 </x-layout>
