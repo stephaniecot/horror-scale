@@ -10,27 +10,28 @@ let modal = document.getElementById("myModal");
 let closeSpan = document.getElementsByClassName("close")[0];
 
 
-searchIcon.addEventListener('click', function() {
+searchIcon.addEventListener('click', function () {
     searchBar.toggleAttribute('hidden');
 })
 
-window.onscroll = function() {scrollMenu()};
+window.onscroll = function () {
+    scrollMenu()
+};
 
 function scrollMenu() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    navBar.classList.add('nav-colored');
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        navBar.classList.add('nav-colored');
 
-    logo.hidden =true;
-  }
-  else {
-      navBar.classList.remove('nav-colored');
+        logo.hidden = true;
+    } else {
+        navBar.classList.remove('nav-colored');
 
-      logo.hidden =false;
+        logo.hidden = false;
 
-  }
+    }
 }
 
-menuButton.addEventListener('click', function() {
+menuButton.addEventListener('click', function () {
 
 
     navLink.style.display = 'flex';
@@ -41,7 +42,7 @@ menuButton.addEventListener('click', function() {
 
 })
 
-closeButton.addEventListener('click', function() {
+closeButton.addEventListener('click', function () {
     navLink.style.display = 'none';
     navWrapper.style.backgroundColor = 'transparent';
     menuButton.hidden = false;
@@ -49,9 +50,8 @@ closeButton.addEventListener('click', function() {
 })
 
 
-
-closeSpan.onclick = function() {
-  modal.style.display = "none";
+if (closeSpan) {
+    closeSpan.addEventListener('click', function () {
+        modal.style.display = "none";
+    })
 }
-
-

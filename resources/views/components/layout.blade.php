@@ -1,16 +1,18 @@
 <!doctype html>
+<html lang="en">
 
-<title>Horror Scale</title>
-<link rel="stylesheet" href="/app.css">
-
-<meta content="width=device-width, initial-scale=1" name="viewport" />
-
-{{-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<script src="//unpkg.com/alpinejs" defer></script>
-
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-
+<head>
+    <title>Horror Scale</title>
+    <meta name='description'
+        content="Horror Scale is a rating system platform gathering everything horror related, books, movies, tv shows, podcasts and video games.">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+    <link rel="stylesheet" href="/app.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel='preload' href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+</head>
 
 
 <body>
@@ -24,50 +26,51 @@
                 </div>
                 <div class='menu-box'>
                     <div>
-                    <button id='menu-icon'>
-                        <ion-icon name="menu-outline"></ion-icon>
-                    </button>
+                        <button id='menu-icon'>
+                            <ion-icon aria-label='menu' name="menu-outline"></ion-icon>
+                        </button>
                     </div>
 
                     <div id='nav-link'>
                         <ul>
-                        <li><button id='close-icon' hidden>
-                            <ion-icon name="close-circle-outline"></ion-icon>
-                        </button></li>
-                        <li id='hidden-logo'>
-                            <a href="/"><img src="/images/logo-white.png" alt="Horror Scale Logo" class='logo-white'></a></li>
-                    <li><a href="/posts">All Media</a></li>
-                        <li><a href="/scores">Media by scores</a></li>
+                            <li><button id='close-icon' hidden>
+                                    <ion-icon name="close-circle-outline"></ion-icon>
+                                </button></li>
+                            <li id='hidden-logo'>
+                                <a href="/"><img src="/images/logo-white.png" alt="Horror Scale Logo"
+                                        class='logo-white'></a></li>
+                            <li><a href="/posts">All Media</a></li>
+                            <li><a href="/scores">Media by scores</a></li>
 
-                        @if (Route::has('login'))
+                            @if (Route::has('login'))
 
-                        @auth
-                        <li><a href="/create">Add a post</a></li>
-                        <li><a href="{{ url('/favorites') }}">My Favorites</a></li>
-                        @can('admin')
-                        <li><a href="{{ url('/admin/posts') }}">Manage posts</a></li>
-                        @endcan
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
+                            @auth
+                            <li><a href="/create">Add a post</a></li>
+                            <li><a href="{{ url('/favorites') }}">My Favorites</a></li>
+                            @can('admin')
+                            <li><a href="{{ url('/admin/posts') }}">Manage posts</a></li>
+                            @endcan
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
 
-                           <li><a href="route('logout')" onclick="event.preventDefault();
+                                <li><a href="route('logout')" onclick="event.preventDefault();
                                             this.closest('form').submit();">
-                                {{ __('Logout') }}
-                            </a></li>
-                        </form>
+                                        {{ __('Logout') }}
+                                    </a></li>
+                            </form>
 
 
-                        @else
-                        <li><a href="{{ route('login') }}">Login</a></li>
+                            @else
+                            <li><a href="{{ route('login') }}">Login</a></li>
 
-                        @if (Route::has('register'))
-                        <li><a href="{{ route('register') }}">Register</a></li>
-                        @endif
-                        @endauth
+                            @if (Route::has('register'))
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                            @endif
+                            @endauth
 
-                        @endif
+                            @endif
 
-                    </ul>
+                        </ul>
                     </div>
                 </div>
                 <div class='searchbar-box'>
@@ -90,13 +93,13 @@
     {{ $slot }}
     <footer>
         <div class="socials">
-            <a href="#">
+            <a aria-label='Facebook' href="#">
                 <ion-icon name="logo-facebook"></ion-icon>
             </a>
-            <a href="#">
+            <a aria-label='Instagram' href="#">
                 <ion-icon name="logo-instagram"></ion-icon>
             </a>
-            <a href="#">
+            <a aria-label='Twitter' href="#">
                 <ion-icon name="logo-twitter"></ion-icon>
             </a>
 
@@ -108,7 +111,7 @@
         <p>&copy 2022 Horror Scale </p>
 
     </footer>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/script.js') }}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
+    <script type="text/javascript" src="{{ URL::asset('js/script.js') }}" defer></script>
 </body>

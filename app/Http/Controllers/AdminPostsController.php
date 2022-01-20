@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Facade\FlareClient\Stacktrace\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File as FacadesFile;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Str;
 
@@ -34,17 +36,7 @@ class AdminPostsController extends Controller
             'slug' => 'unique'
         ]);
 
-        // $post->update([
-        //     'user_id' => request()->user()->id,
-        //     'slug' => Str::slug(request('title')).'('.Str::slug(request('author')).')',
-        //     'active' => request()->boolean('active'),
-        //     'title' => request('title'),
-        //     'author' => request('author'),
-        //     'year' => request('year'),
-        //     'category_id' => request('category_id'),
-        //     'summary' => request('summary'),
-        //     'thumbnail' => request()->file('thumbnail')->store('thumbnails')
-        // ]);
+
         if(isset($attributes['thumbnail'])){
             $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
         }
@@ -56,6 +48,8 @@ class AdminPostsController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
+
+
 
         return back()->with('message', 'The post was successfully deleted!');
     }

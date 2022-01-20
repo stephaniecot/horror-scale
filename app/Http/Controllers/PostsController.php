@@ -11,13 +11,6 @@ use Illuminate\Support\Str;
 
 class PostsController extends Controller
 {
-    // public function index()
-    // {
-    //     return view('index', [
-    //         'posts' => Post::all()
-    //     ]);
-    // }
-
     public function index()
     {
         return view('posts/index', [
@@ -51,7 +44,7 @@ class PostsController extends Controller
         request()->validate([
             'title' => ['required', Rule::unique('posts', 'title')->where('author', request('author'))],
             'author' => 'required',
-            'year' => 'required',
+            'year' => 'required|integer',
             'thumbnail' => 'required|image',
             'category_id' => ['required', Rule::exists('categories', 'id')],
             'active' => [Rule::requiredIf(request()->user()->is_admin),'boolean'],

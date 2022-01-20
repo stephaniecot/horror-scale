@@ -23,7 +23,7 @@
                         <h3 class='card-heading'>{{ $score->title }}</h3>
                         {{ucwords($score->category->name)}}
                         <a href="/posts/{{ $score->slug }}"><img class='card-img'
-                            src="{{ asset('storage/' . $score->thumbnail) }}" alt="{{$score->title}} thumbnail"></a>
+                                src="{{ asset('storage/' . $score->thumbnail) }}" alt="{{$score->title}} thumbnail"></a>
 
                     </div>
                     @endforeach
@@ -36,15 +36,17 @@
                 <h2 class='heading-secondary'>Add some weight on the Horror Scale</h2>
                 <p>I want to rate ...</p>
                 <div class="cards-container">
-                @foreach ($categories as $category)
+                    @foreach ($categories as $category)
 
-                    <a href="/posts?category={{ $category->slug }}"><div class='img-container'>
-                    <img src="/images/{{$category->slug}}.jpg" class='img-link' alt="" width="300px">
-                    <h4 class='centered'>{{ucwords($category->name)}}s</h4>
-                </div></a>
+                    <a href="/posts?category={{ $category->slug }}">
+                        <div class='img-container'>
+                            <img src="/images/{{$category->slug}}.webp" class='img-link' alt="" width="300px">
+                            <h3 class='centered'>{{ucwords($category->name)}}s</h3>
+                        </div>
+                    </a>
 
-                @endforeach
-            </div>
+                    @endforeach
+                </div>
 
             </div>
         </section>

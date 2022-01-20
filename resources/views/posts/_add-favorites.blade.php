@@ -1,14 +1,10 @@
-
-    @auth
+@auth
 
 @if ($post->favorite->contains('user_id', Auth::user()->id))
 
 <form method="post" action='/favorites/{{ $post->id }}''>
-    @method('DELETE')
-    @csrf
-
-    <button class='general-button' type="submit">
-        Remove from favorites
+    @method(' DELETE') @csrf <button class='general-button' type="submit">
+    Remove from favorites
     </button>
 
 </form>
@@ -23,5 +19,4 @@
 </form>
 @endif
 
-    @endauth
-
+@endauth

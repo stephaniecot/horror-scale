@@ -23,6 +23,8 @@ class CreateCategoriesTable extends Migration
         $data = [
             ['name'=>'book', 'slug'=> 'books'],
             ['name'=>'movie', 'slug'=> 'movies'],
+            ['name'=>'tv show', 'slug'=> 'tvshows'],
+            ['name'=>'video game', 'slug'=> 'videogames'],
             ['name'=>'podcast', 'slug'=>'podcasts']
         ];
         DB::table('categories')->insert($data);

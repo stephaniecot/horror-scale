@@ -30,7 +30,7 @@ class FavoritesController extends Controller
     {
         $post->favorite()->delete();
 
-        return back()->with('success', 'Post Deleted!');
+        return back();
     }
 
 }

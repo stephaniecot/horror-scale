@@ -5,13 +5,14 @@
     @endif
     @foreach ($post->scores as $score)
     <div class='users-ratings'>
-        <div>
-            <h3>{{$score->user->username}}</h3>
-            <h3>{{$score->total_score}}/10</h3>
-            <h4>{{$score->created_at->diffForHumans()}}</h4>
+        <div class='rating-header'>
+            <h4>{{$score->user->username}}</h4>
+            <h4>{{$score->total_score}}/10</h4>
+
         </div>
+        <i>{{$score->created_at->diffForHumans()}}</i>
         <div>
-        <p>{{$score->comment}}</p>
+            <p>{{$score->comment}}</p>
         </div>
     </div>
     @endforeach
