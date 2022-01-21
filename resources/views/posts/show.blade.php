@@ -8,7 +8,7 @@
                 <div class="post-info-card">
                     <div class="post-info-left">
 
-                        <img class='post-info-img' src="{{ asset('storage/' . $post->thumbnail) }}"
+                        <img class='post-info-img' src="/storage/{{$post->thumbnail}}"
                             alt="{{$post->title}} thumbnail">
                         @include('posts._add-favorites')
 
@@ -27,7 +27,7 @@
 
                         <h2 class='heading-secondary'>Rating</h2>
                         @if ($post->scores->count()===0)
-                        No rating yet
+                        No ratings yet
                         @else
 
                         <span class='score-span'>

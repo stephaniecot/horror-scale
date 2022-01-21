@@ -15,7 +15,7 @@
                 <div class="card">
                     <h3 class='card-heading'>{{ $favorite->post->title }}</h3>
                     <a href="/posts/{{ $favorite->post->slug }}"><img class='card-img'
-                            src="{{ asset('storage/' . $favorite->post->thumbnail) }}"
+                        src="/storage/{{$favorite->post->thumbnail}}"
                             alt="{{$favorite->post->title}} thumbnail"></a>
                 </div>
 

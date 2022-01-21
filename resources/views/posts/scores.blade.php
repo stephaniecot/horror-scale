@@ -13,7 +13,7 @@
                     <h2 class='card-heading'>{{ $post->title }}</h2>
                     {{ucwords($post->category->name)}}
                     <a href="/posts/{{ $post->slug }}"><img class='card-img'
-                            src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{$post->title}} thumbnail"></a>
+                        src="/storage/{{$post->thumbnail}}" alt="{{$post->title}} thumbnail"></a>
                     <h3 class='card-rating'>{{ $post->scores->avg('total_score') }}/10</h3>
                     <h3>{{$post->scores->count()}} votes</h3>
 

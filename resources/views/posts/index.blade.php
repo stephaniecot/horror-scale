@@ -22,7 +22,7 @@
                     <h2 class='card-heading'>{{ $post->title }}</h2>
                     {{ucwords($post->category->name)}}
                     <a href="/posts/{{ $post->slug }}"><img class='card-img'
-                            src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{$post->title}} thumbnail"></a>
+                        src="/storage/{{$post->thumbnail}}" alt="{{$post->title}} thumbnail"></a>
 
                 </div>
                 @endforeach
