@@ -5,6 +5,7 @@
     <title>Horror Scale</title>
     <meta name='description'
         content="Horror Scale is a rating system platform gathering everything horror related, books, movies, tv shows, podcasts and video games.">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
     <link rel="stylesheet" href="/app.css">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -113,5 +114,5 @@
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
-    <script type="text/javascript" src="{{ URL::asset('js/script.js') }}" defer></script>
+    <script type="text/javascript" src="{{ URL::secure_asset('js/script.js') }}" defer></script>
 </body>
