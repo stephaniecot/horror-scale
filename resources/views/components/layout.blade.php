@@ -114,5 +114,5 @@
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
-    <script type="text/javascript" src="{{ URL::secure_asset('js/script.js') }}" defer></script>
+    <script type="text/javascript" src="js/script.js" defer></script>
 </body>
