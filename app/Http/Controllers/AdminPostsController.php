@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Facade\FlareClient\Stacktrace\File;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File as FacadesFile;
 use Illuminate\Validation\Rule;
-use Illuminate\Support\Str;
+
 
 class AdminPostsController extends Controller
 {
