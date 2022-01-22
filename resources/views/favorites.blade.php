@@ -15,7 +15,7 @@
                 <div class="card">
                     <h3 class='card-heading'>{{ $favorite->post->title }}</h3>
                     <a href="/posts/{{ $favorite->post->slug }}"><img class='card-img'
-                        src="/storage/{{$favorite->post->thumbnail}}"
+                        src="https://horror-scale.s3.ca-central-1.amazonaws.com/{{$favorite->post->thumbnail}}"
                             alt="{{$favorite->post->title}} thumbnail"></a>
                 </div>
 

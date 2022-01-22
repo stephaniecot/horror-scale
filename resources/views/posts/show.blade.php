@@ -8,7 +8,7 @@
                 <div class="post-info-card">
                     <div class="post-info-left">
 
-                        <img class='post-info-img' src="/storage/{{$post->thumbnail}}"
+                        <img class='post-info-img' src="https://horror-scale.s3.ca-central-1.amazonaws.com/{{$post->thumbnail}}"
                             alt="{{$post->title}} thumbnail">
                         @include('posts._add-favorites')
 

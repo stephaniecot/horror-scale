@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Storage;
 
 
 class AdminPostsController extends Controller
@@ -36,6 +37,7 @@ class AdminPostsController extends Controller
 
         if(isset($attributes['thumbnail'])){
             $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+            Storage::disk('s3')->put('thumbnails', request()->file('thumbnail'));
         }
         $post->update($attributes);
 

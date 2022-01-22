@@ -23,7 +23,7 @@
                         <h3 class='card-heading'>{{ $score->title }}</h3>
                         {{ucwords($score->category->name)}}
                         <a href="/posts/{{ $score->slug }}"><img class='card-img'
-                            src="/storage/{{$score->thumbnail}}" alt="{{$score->title}} thumbnail"></a>
+                            src="https://horror-scale.s3.ca-central-1.amazonaws.com/{{$score->thumbnail}}" alt="{{$score->title}} thumbnail"></a>
 
                     </div>
                     @endforeach
