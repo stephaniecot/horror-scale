@@ -62,7 +62,7 @@ class PostsController extends Controller
             'year' => request('year'),
             'category_id' => request('category_id'),
             'summary' => request('summary'),
-            'thumbnail' => request()->file('thumbnail')
+            'thumbnail' => request()->file('thumbnail')->store('thumbnails')
         ]);
         Storage::disk('s3')->put('thumbnails', request()->file('thumbnail'));
 
