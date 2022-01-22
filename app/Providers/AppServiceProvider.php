@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useTailwind();
 
         Gate::define('admin', function (User $user) {
-            return $user->username === 'Admin';
+            return $user->email === 'stephanie.cot@outlook.com';
         });
 
         Blade::if('admin', function(){
