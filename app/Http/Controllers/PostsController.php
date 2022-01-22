@@ -64,7 +64,7 @@ class PostsController extends Controller
             'summary' => request('summary'),
             'thumbnail' => request()->file('thumbnail')
         ]);
-        Storage::disk('s3')->put(time(), request()->file('thumbnail'));
+        Storage::disk('s3')->put('thumbnails', request()->file('thumbnail'));
 
 
         return redirect('/posts')->with('message', 'Your post was created. Please wait until it is reviewed');
