@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class PostsController extends Controller
 {
@@ -61,8 +62,10 @@ class PostsController extends Controller
             'year' => request('year'),
             'category_id' => request('category_id'),
             'summary' => request('summary'),
-            'thumbnail' => request()->file('thumbnail')->store('thumbnails')
+            'thumbnail' => request()->file('thumbnail')
         ]);
+        Storage::disk('s3')->put(time(), request()->file('thumbnail'));
+
 
         return redirect('/posts')->with('message', 'Your post was created. Please wait until it is reviewed');
     }
